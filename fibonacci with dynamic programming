@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int mem[100]; // Memoization
+int fib(int n) {
+    if (n == 1 || n == 2) {
+        return 1;
+    }
+    if (mem[n] != -1) {
+        return mem[n];
+    }
+    return mem[n] = fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+    memset(mem, -1, sizeof mem);
+    printf("%d\n", fib(10));
+    return 0;
+}
